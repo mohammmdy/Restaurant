@@ -1,0 +1,12 @@
+npm init --y
+npm install  express  --save
+npm install  -D  nodemon
+npm i dotenv
+npm install morgan 
+npm install -g typescript
+tsc --init
+npm install mongoose
+npm i express-async-handler
+npm install multer 
+npm install uuid
+npm install sharp

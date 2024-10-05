@@ -5,6 +5,7 @@ const subCategoryModel = require("../models/subCategoryModel");
 function: createSubCategory
 auth: Admin - manager
 path: post: originalpath/subCategory
+path: post: originalpath/category/:categoryId/subCategories
 */
 exports.setCategoryIdToBody = asyncHandler((req, res, next) => {
   if (!req.body.category) req.body.category = req.params.categoryId;
@@ -31,6 +32,7 @@ exports.getSubCategory = asyncHandler(async (req, res) => {
 function: getSubCategories
 auth: Admin - manager - user
 path: get: originalpath/subCategory/
+path: get: originalpath/category/:categoryId/subCategories
 */
 exports.setFilter = asyncHandler((req, res, next) => {
   filter = {};

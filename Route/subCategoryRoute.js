@@ -10,7 +10,11 @@ const {
   deleteSubCategory,
 } = require("../servieces/subCategoryService");
 
+const productRoute = require("./productRoute");
+
 const router = express.Router({ mergeParams: true });
+
+router.use("/:subCategoryId/products", productRoute);
 
 router
   .route("/")

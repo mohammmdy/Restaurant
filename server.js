@@ -7,6 +7,7 @@ const connection = require("./config/dataBase");
 const ApiError = require("./utils/apiError");
 const globalError = require("./middlewares/errorMiddleware");
 const categoryRoute = require("./Route/categoryRoute");
+const subCategoryRoute = require("./Route/subCategoryRoute");
 
 dotenv.config({ path: "config.env" });
 const app = express();
@@ -16,6 +17,7 @@ app.use(express.json());
 connection();
 
 app.use("/restaurant/category", categoryRoute);
+app.use("/restaurant/subCategory", subCategoryRoute);
 
 app.all("*", (req, res, next) => {
   next(new ApiError(`can't find this route ${req.originalUrl}`, 400));

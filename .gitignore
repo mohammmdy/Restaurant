@@ -4,6 +4,6 @@ upload/menu/*
 upload/product/*
 
 
-# But allow .gitkeep files to be tracked
+# But allow .gitkeep files to beee tracked
 !upload/menu/.gitkeep
 !upload/product/.gitkeep

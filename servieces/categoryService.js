@@ -54,5 +54,5 @@ path: delete: originalpath/category/:id
 */
 exports.deleteCategory = asyncHandler(async (req, res, next) => {
   const category = await categoryModel.findByIdAndDelete(req.params.id);
-  res.status(204);
+  res.status(204).send()
 });

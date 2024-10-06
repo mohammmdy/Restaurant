@@ -1,2 +1,4 @@
 node_modules/
 config.env
+upload/menu/*
+upload/product/*

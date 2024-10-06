@@ -10,12 +10,31 @@ const {
   deleteProduct,
 } = require("../servieces/productService");
 
+const {
+  uploadSingleImage,
+  resizeAndSaveImage,
+} = require("../middlewares/uploadImage");
+
 const router = express.Router({ mergeParams: true });
 
 router
   .route("/")
-  .post(setsubCategoryIdToBody, createProduct)
+  .post(
+    uploadSingleImage("image"),
+    resizeAndSaveImage("product", 500, 500, 90),
+    setsubCategoryIdToBody,
+    createProduct
+  )
   .get(setFilter, getProducts);
-router.route("/:id").get(getProduct).put(updateProduct).delete(deleteProduct);
+
+router
+  .route("/:id")
+  .get(getProduct)
+  .put(
+    uploadSingleImage("image"),
+    resizeAndSaveImage("product", 1000, 1000, 90),
+    updateProduct
+  )
+  .delete(deleteProduct);
 
 module.exports = router;

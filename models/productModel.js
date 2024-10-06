@@ -47,5 +47,19 @@ const productSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
+const setImageUrl = (doc) => {
+  if (doc.image) {
+    const imageUrl = `${process.env.BASE_URL}/product/${doc.image}`;
+    doc.image = imageUrl;
+  }
+};
+
+productSchema.post("init", (doc) => {
+  setImageUrl(doc);
+});
+productSchema.post("save", (doc) => {
+  setImageUrl(doc);
+});
+
 const proudctModel = mongoose.model("product", productSchema);
 module.exports = proudctModel;

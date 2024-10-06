@@ -2,3 +2,8 @@ node_modules/
 config.env
 upload/menu/*
 upload/product/*
+
+
+# But allow .gitkeep files to be tracked
+!upload/menu/.gitkeep
+!upload/product/.gitkeep

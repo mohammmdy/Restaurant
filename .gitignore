@@ -2,7 +2,7 @@ node_modules/
 config.env
 upload/menu/*
 upload/product/*
-
+utils/google-strategy.js
 
 # But allow .gitkeep files to beee tracked
 !upload/menu/.gitkeep

@@ -10,3 +10,8 @@ npm i express-async-handler
 npm install multer 
 npm install uuid
 npm install sharp
+npm install bcryptjs
+npm install express-session
+npm install passport-google-oauth2
+npm install passport
+npm install jsonwebtoken
